@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kiruthika Venkatesan — AI & Analytics Product Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#020406;--surface:#080b12;--surface-2:#0f1320;--surface-3:#181d2e;--border:#222840;--border-h:#323850;--text:#f0eef6;--text-muted:#6a6c82;--cvs-red:#cc0000;--cvs-red-glow:rgba(204,0,0,0.1);--cvs-red-border:rgba(204,0,0,0.22);--cvs-red-shadow:0 0 30px rgba(204,0,0,0.06);--teal:#14b8a6;--teal-glow:rgba(20,184,166,0.1);--blue:#3b82f6;--blue-glow:rgba(59,130,246,0.08);--amber:#f59e0b;--amber-glow:rgba(245,158,11,0.08);--violet:#8b5cf6;--violet-glow:rgba(139,92,246,0.08);--sans:'Plus Jakarta Sans',sans-serif;--mono:'IBM Plex Mono',monospace}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:400;line-height:1.7;overflow-x:hidden}::selection{background:var(--cvs-red);color:#fff}
+.noise{position:fixed;top:0;left:0;width:100%;height:100%;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.015'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}
+.grid-bg{position:fixed;top:0;left:0;width:100%;height:100%;background-image:linear-gradient(rgba(20,184,166,0.012) 1px,transparent 1px),linear-gradient(90deg,rgba(20,184,166,0.012) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 48px;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(24px);background:rgba(2,4,6,0.88);border-bottom:1px solid var(--border)}
+nav .logo{font-family:var(--mono);font-size:14px;font-weight:600}nav .logo span{color:var(--teal)}
+nav ul{list-style:none;display:flex;gap:28px}nav a{color:var(--text-muted);text-decoration:none;font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;transition:color .3s}nav a:hover{color:var(--teal)}
+
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:140px 48px 80px;max-width:1200px;margin:0 auto;position:relative;z-index:1}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:0}
+.hero-orb1{top:-100px;right:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(20,184,166,0.06) 0%,transparent 70%)}
+.hero-orb2{bottom:-60px;left:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(139,92,246,0.04) 0%,transparent 70%)}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10px;color:var(--teal);background:var(--teal-glow);border:1px solid rgba(20,184,166,0.25);padding:6px 18px;border-radius:100px;width:fit-content;margin-bottom:28px;box-shadow:0 0 30px rgba(20,184,166,0.06);position:relative;z-index:1}
+.hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--teal);box-shadow:0 0 8px var(--teal);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-size:clamp(40px,5.5vw,70px);font-weight:800;line-height:1.04;max-width:880px;margin-bottom:28px;letter-spacing:-2.5px;position:relative;z-index:1}
+.hero h1 .tl{background:linear-gradient(135deg,var(--teal),#2dd4bf);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero h1 .vl{background:linear-gradient(135deg,var(--violet),#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-sub{font-size:16px;color:var(--text-muted);max-width:620px;line-height:1.8;margin-bottom:48px;font-weight:400;position:relative;z-index:1}
+
+/* MEGA METRICS GRID */
+.mega-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:18px;overflow:hidden;box-shadow:0 4px 60px rgba(0,0,0,0.4);position:relative;z-index:1;margin-bottom:16px}
+.mm{background:var(--surface);padding:22px 16px;text-align:center;position:relative}
+.mm::after{content:'';position:absolute;bottom:0;left:15%;right:15%;height:1px;background:linear-gradient(90deg,transparent,var(--teal),transparent);opacity:0.1}
+.mm .num{font-family:var(--mono);font-size:32px;font-weight:700}.mm .lab{font-size:9px;color:var(--text-muted);margin-top:3px;letter-spacing:.8px;text-transform:uppercase}
+.mm:nth-child(1) .num{background:linear-gradient(135deg,var(--teal),#2dd4bf);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.mm:nth-child(2) .num{background:linear-gradient(135deg,var(--blue),#60a5fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.mm:nth-child(3) .num{background:linear-gradient(135deg,var(--violet),#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.mm:nth-child(4) .num{background:linear-gradient(135deg,var(--amber),#fbbf24);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.mm:first-child{border-radius:18px 0 0 0}.mm:nth-child(4){border-radius:0 18px 0 0}
+
+.stats-row2{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:0 0 18px 18px;overflow:hidden;box-shadow:0 4px 60px rgba(0,0,0,0.2);position:relative;z-index:1}
+.sr2{background:var(--surface-2);padding:16px;text-align:center}
+.sr2 .num{font-family:var(--mono);font-size:20px;font-weight:600;color:var(--teal)}.sr2 .lab{font-size:8px;color:var(--text-muted);margin-top:2px;letter-spacing:.5px;text-transform:uppercase}
+
+/* TICKER */
+.ticker{overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:12px 0;background:var(--surface);margin-top:40px}
+.ticker-inner{display:flex;gap:40px;animation:scroll 40s linear infinite;width:max-content}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.ticker-item{font-family:var(--mono);font-size:11px;color:var(--text-muted);white-space:nowrap;display:flex;align-items:center;gap:6px}
+.ticker-item .val{font-weight:600}.tv-t{color:var(--teal)}.tv-b{color:var(--blue)}.tv-v{color:var(--violet)}.tv-a{color:var(--amber)}.tv-r{color:var(--cvs-red)}
+.ticker-dot{width:3px;height:3px;border-radius:50%;background:var(--border)}
+
+section{padding:100px 48px;max-width:1200px;margin:0 auto;position:relative;z-index:1}
+.chip{font-family:var(--mono);font-size:10px;color:var(--teal);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:12px}
+.stitle{font-size:clamp(26px,3.5vw,44px);font-weight:800;line-height:1.12;margin-bottom:12px;letter-spacing:-1px}
+.stitle .tl{background:linear-gradient(135deg,var(--teal),#2dd4bf);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sdesc{color:var(--text-muted);max-width:540px;font-size:14px;margin-bottom:56px;font-weight:400}
+
+/* CASES */
+.cases{display:flex;flex-direction:column;gap:16px}
+.case{background:linear-gradient(135deg,var(--surface),var(--surface-2));border:1px solid var(--border);border-radius:22px;display:grid;grid-template-columns:290px 1fr;overflow:hidden;transition:all .5s}
+.case:hover{border-color:rgba(20,184,166,0.25);transform:translateY(-4px);box-shadow:0 8px 40px rgba(20,184,166,0.06)}
+.cv{display:flex;align-items:center;justify-content:center;position:relative;padding:24px}
+.case:nth-child(1) .cv{background:linear-gradient(160deg,#040a0a,#081010)}
+.case:nth-child(2) .cv{background:linear-gradient(160deg,#04060c,#080a14)}
+.case:nth-child(3) .cv{background:linear-gradient(160deg,#08040c,#0c0814)}
+.case:nth-child(4) .cv{background:linear-gradient(160deg,#0a0804,#0e0c08)}
+.ctag{position:absolute;top:16px;left:16px;font-family:var(--mono);font-size:8px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:100px}
+.ct1{color:var(--teal);background:var(--teal-glow);border:1px solid rgba(20,184,166,0.25)}
+.ct2{color:var(--blue);background:var(--blue-glow);border:1px solid rgba(59,130,246,0.2)}
+.ct3{color:var(--violet);background:var(--violet-glow);border:1px solid rgba(139,92,246,0.2)}
+.ct4{color:var(--amber);background:var(--amber-glow);border:1px solid rgba(245,158,11,0.2)}
+.cb{padding:30px;display:flex;flex-direction:column;justify-content:center}
+.cb h3{font-size:19px;font-weight:700;margin-bottom:8px;line-height:1.3;letter-spacing:-.3px}
+.cb p{color:var(--text-muted);font-size:13px;line-height:1.8;margin-bottom:16px;font-weight:400}
+.mts{display:flex;gap:10px;flex-wrap:wrap}
+.mt{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 16px;transition:border-color .3s}
+.mt:hover{border-color:rgba(20,184,166,0.25)}
+.mt strong{display:block;font-family:var(--mono);font-size:17px;font-weight:600}
+.mt.m1 strong{color:var(--teal)}.mt.m2 strong{color:var(--blue)}.mt.m3 strong{color:var(--violet)}.mt.m4 strong{color:var(--amber)}
+.mt span{font-size:9px;color:var(--text-muted);letter-spacing:.3px}
+
+/* EXPERIENCE */
+.exp-bg{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);position:relative;z-index:1}
+.exp-bg>div{max-width:1200px;margin:0 auto;padding:100px 48px}
+.tl{position:relative;padding-left:40px}
+.tl::before{content:'';position:absolute;left:9px;top:8px;bottom:8px;width:1px;background:linear-gradient(to bottom,var(--teal),var(--violet),var(--border))}
+.tli{position:relative;margin-bottom:34px}.tli:last-child{margin-bottom:0}
+.tli::before{content:'';position:absolute;left:-40px;top:6px;width:18px;height:18px;border-radius:50%;border:2px solid var(--teal);background:var(--bg)}
+.tli.on::before{background:var(--teal);box-shadow:0 0 14px rgba(20,184,166,0.35)}
+.tlh{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:6px}
+.tlt{font-size:14px;font-weight:700;letter-spacing:-.2px}.tlc{color:var(--teal);font-weight:500}
+.tld{font-family:var(--mono);font-size:10px;color:var(--text-muted)}
+.tlu{list-style:none;padding:0}.tlu li{color:var(--text-muted);font-size:12px;line-height:1.75;margin-bottom:5px;padding-left:18px;position:relative;font-weight:400}
+.tlu li::before{content:'→';position:absolute;left:0;color:var(--teal);opacity:0.35}
+
+/* APPROACH */
+.ag{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.ac{background:linear-gradient(135deg,var(--surface-2),var(--surface));border:1px solid var(--border);border-radius:18px;padding:34px;transition:all .4s;position:relative;overflow:hidden}
+.ac:hover{border-color:rgba(20,184,166,0.25);transform:translateY(-3px);box-shadow:0 8px 30px rgba(20,184,166,0.05)}
+.ac::before{content:attr(data-n);position:absolute;top:-14px;right:18px;font-family:var(--mono);font-size:90px;font-weight:800;color:var(--surface-3);line-height:1;pointer-events:none}
+.ac::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;opacity:0;transition:opacity .3s}
+.ac:nth-child(1)::after{background:linear-gradient(90deg,transparent,var(--teal),transparent)}
+.ac:nth-child(2)::after{background:linear-gradient(90deg,transparent,var(--violet),transparent)}
+.ac:nth-child(3)::after{background:linear-gradient(90deg,transparent,var(--blue),transparent)}
+.ac:hover::after{opacity:0.4}
+.ac h3{font-size:15px;font-weight:700;margin-bottom:8px;position:relative;z-index:1}
+.ac p{font-size:12.5px;color:var(--text-muted);line-height:1.8;font-weight:400;position:relative;z-index:1}
+
+/* TECH */
+.tg{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.tp{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 14px;text-align:center;transition:all .3s;position:relative;overflow:hidden}
+.tp:hover{border-color:rgba(20,184,166,0.25);transform:translateY(-2px)}
+.tp::after{content:'';position:absolute;top:0;left:25%;right:25%;height:1px;background:var(--teal);opacity:0;transition:opacity .3s}
+.tp:hover::after{opacity:0.3}
+.tp .tn{font-size:12px;font-weight:600;margin-bottom:3px}.tp .tc{font-family:var(--mono);font-size:8px;color:var(--text-muted);letter-spacing:1px;text-transform:uppercase}
+
+.eg{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ec{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:26px;transition:all .3s}
+.ec:hover{border-color:rgba(20,184,166,0.25)}
+.ec .es{font-size:17px;font-weight:700;margin-bottom:3px}.ec .ed{font-size:12px;color:var(--text-muted);margin-bottom:8px}
+.ec .em{display:flex;justify-content:space-between}.ec .gp{font-family:var(--mono);font-size:14px;font-weight:600;color:var(--teal)}.ec .dt{font-family:var(--mono);font-size:10px;color:var(--text-muted)}
+.certs{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
+.cert{font-family:var(--mono);font-size:10px;color:var(--text-muted);background:var(--surface-2);border:1px solid var(--border);padding:5px 12px;border-radius:100px;transition:all .3s}
+.cert:hover{border-color:rgba(20,184,166,0.25);color:var(--teal)}
+.cert.primary{color:var(--teal);border-color:rgba(20,184,166,0.25);background:var(--teal-glow);font-weight:500}
+
+.contact{text-align:center;padding:130px 48px;position:relative;z-index:1}
+.contact::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(20,184,166,0.04) 0%,transparent 60%);pointer-events:none}
+.contact h2{font-size:clamp(30px,5vw,54px);font-weight:800;margin-bottom:12px;letter-spacing:-1.5px;position:relative}
+.contact h2 .tl{background:linear-gradient(135deg,var(--teal),#2dd4bf);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.cls{display:flex;gap:16px;justify-content:center;margin-top:30px;position:relative}
+.cls a{color:var(--text);text-decoration:none;font-size:12px;font-weight:500;padding:14px 36px;border:1px solid var(--border);border-radius:100px;transition:all .4s}
+.cls a:hover{border-color:var(--teal);color:var(--teal);box-shadow:0 0 20px rgba(20,184,166,0.08)}
+footer{text-align:center;padding:30px;border-top:1px solid var(--border);font-family:var(--mono);font-size:10px;color:var(--text-muted);position:relative;z-index:1}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}.fade{animation:fadeUp .8s ease forwards}.d1{animation-delay:.1s;opacity:0}.d2{animation-delay:.2s;opacity:0}.d3{animation-delay:.3s;opacity:0}.d4{animation-delay:.4s;opacity:0}.d5{animation-delay:.5s;opacity:0}
+@media(max-width:768px){nav{padding:14px 20px}nav ul{display:none}section,.hero,.exp-bg>div{padding-left:20px;padding-right:20px}.case{grid-template-columns:1fr}.cv{height:170px}.ag,.tg{grid-template-columns:1fr 1fr}.mega-metrics,.stats-row2{grid-template-columns:1fr 1fr}.eg{grid-template-columns:1fr}.hero-orb1,.hero-orb2{display:none}}
+</style>
+</head>
+<body>
+<div class="noise"></div>
+<div class="grid-bg"></div>
+
+<nav><div class="logo">K<span>.</span>V</div><ul><li><a href="#work">Work</a></li><li><a href="#metrics">Impact</a></li><li><a href="#experience">Experience</a></li><li><a href="#approach">Approach</a></li><li><a href="#stack">Skills</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+
+<div class="hero">
+<div class="hero-orb hero-orb1"></div><div class="hero-orb hero-orb2"></div>
+<div class="hero-badge fade d1"><div class="dot"></div> AI Products &middot; Analytics &middot; Decision Support &middot; Change Management</div>
+<h1 class="fade d2">I build <span class="tl">AI-powered analytics</span> products that frontline teams <span class="vl">actually adopt</span>.</h1>
+<p class="hero-sub fade d3">5+ years leading AI/ML analytics products in regulated enterprises. Hypothesis-driven approaches transforming data into actionable insights. I don't just ship AI features — I design adoption strategies that get non-technical frontline teams from 34% to 78% usage without mandatory training.</p>
+
+<!-- MEGA METRICS — 4+4 grid -->
+<div class="mega-metrics fade d4">
+<div class="mm"><div class="num">93%</div><div class="lab">AI Prediction Accuracy</div></div>
+<div class="mm"><div class="num">84%</div><div class="lab">Product Adoption</div></div>
+<div class="mm"><div class="num">100M+</div><div class="lab">Records at Scale</div></div>
+<div class="mm"><div class="num">$7.8M</div><div class="lab">Business Impact</div></div>
+</div>
+<div class="stats-row2 fade d5">
+<div class="sr2"><div class="num">8/12</div><div class="lab">Hypotheses Validated</div></div>
+<div class="sr2"><div class="num">34→78%</div><div class="lab">Frontline Adoption</div></div>
+<div class="sr2"><div class="num">41%</div><div class="lab">Faster Decisions</div></div>
+<div class="sr2"><div class="num">90+</div><div class="lab">SME Sessions</div></div>
+</div>
+</div>
+
+<!-- TICKER -->
+<div class="ticker"><div class="ticker-inner">
+<span class="ticker-item">ML Risk Stratification <span class="val tv-t">93% accuracy</span></span><span class="ticker-dot"></span>
+<span class="ticker-item">Hypothesis-Driven <span class="val tv-v">8/12 validated</span></span><span class="ticker-dot"></span>
+<span class="ticker-item">Frontline Adoption <span class="val tv-b">34%→78%</span></span><span class="ticker-dot"></span>
+<span class="ticker-item">Decision Speed <span class="val tv-t">41% faster</span></span><span class="ticker-dot"></span>
+<span class="ticker-item">Next Best Action <span class="val tv-a">38% better outcomes</span></span><span class="ticker-dot"></span>
+<span class="ticker-item">Change Management <span class="val tv-v">3 teams transformed</span></span><span class="ticker-dot"></span>
+<span class="ticker-item">User Stories <span class="val tv-b">auto-generated</span></span><span class="ticker-dot"></span>
+<span class="ticker-item">Scale <span class="val tv-a">100M+ records</span></span><span class="ticker-dot"></span>
+<span class="ticker-item">ML Risk Stratification <span class="val tv-t">93% accuracy</span></span><span class="ticker-dot"></span>
+<span class="ticker-item">Hypothesis-Driven <span class="val tv-v">8/12 validated</span></span><span class="ticker-dot"></span>
+<span class="ticker-item">Frontline Adoption <span class="val tv-b">34%→78%</span></span><span class="ticker-dot"></span>
+<span class="ticker-item">Decision Speed <span class="val tv-t">41% faster</span></span><span class="ticker-dot"></span>
+<span class="ticker-item">Next Best Action <span class="val tv-a">38% better outcomes</span></span><span class="ticker-dot"></span>
+<span class="ticker-item">Change Management <span class="val tv-v">3 teams transformed</span></span><span class="ticker-dot"></span>
+<span class="ticker-item">User Stories <span class="val tv-b">auto-generated</span></span><span class="ticker-dot"></span>
+<span class="ticker-item">Scale <span class="val tv-a">100M+ records</span></span><span class="ticker-dot"></span>
+</div></div>
+
+<!-- CASES -->
+<section id="work">
+<div class="chip">Selected work</div>
+<h2 class="stitle">Four AI products I <span class="tl">shipped and got adopted</span>.</h2>
+<p class="sdesc">Not just built — adopted. Each product transformed how frontline operations teams make decisions, with hypothesis-driven methodology and measurable outcomes.</p>
+<div class="cases">
+
+<div class="case"><div class="cv"><div class="ctag ct1">DECISION SUPPORT</div><svg width="230" height="170" viewBox="0 0 230 170"><rect x="20" y="12" width="190" height="40" rx="6" fill="none" stroke="#14b8a6" stroke-width="0.5" opacity="0.3"/><text x="115" y="28" font-size="8" fill="#14b8a6" text-anchor="middle" font-family="monospace" opacity="0.8">ML prediction engine</text><text x="115" y="42" font-size="7" fill="#6a6c82" text-anchor="middle" font-family="monospace">risk stratification · 14 signals</text><line x1="115" y1="57" x2="115" y2="72" stroke="#6a6c82" stroke-width="0.5"/><rect x="25" y="78" width="80" height="32" rx="5" fill="#14b8a6" opacity="0.06" stroke="#14b8a6" stroke-width="0.4"/><text x="65" y="92" font-size="7" fill="#14b8a6" text-anchor="middle" font-family="monospace" opacity="0.8">at-risk</text><text x="65" y="104" font-size="7" fill="#14b8a6" text-anchor="middle" font-family="monospace" opacity="0.8">populations</text><rect x="125" y="78" width="80" height="32" rx="5" fill="#8b5cf6" opacity="0.06" stroke="#8b5cf6" stroke-width="0.4"/><text x="165" y="92" font-size="7" fill="#8b5cf6" text-anchor="middle" font-family="monospace" opacity="0.8">intervention</text><text x="165" y="104" font-size="7" fill="#8b5cf6" text-anchor="middle" font-family="monospace" opacity="0.8">recommendations</text><text x="115" y="138" font-size="9" fill="#14b8a6" text-anchor="middle" font-family="monospace" opacity="0.6">93% accuracy · 41% faster decisions</text><text x="115" y="158" font-size="8" fill="#6a6c82" text-anchor="middle" font-family="monospace">analogous to clinical decision support</text></svg></div><div class="cb"><h3>ML-powered decision support: risk stratification at scale</h3><p>Built a prediction engine analogous to clinical decision support — ML model analyzed 14 behavioral signals to identify at-risk populations, flagged intervention opportunities, and delivered personalized recommendations to frontline teams. Hypothesis-driven: 8 of 12 hypotheses validated and shipped.</p><div class="mts"><div class="mt m1"><strong>93%</strong><span>Prediction accuracy</span></div><div class="mt m3"><strong>41%</strong><span>Faster decisions</span></div><div class="mt m2"><strong>8/12</strong><span>Hypotheses shipped</span></div></div></div></div>
+
+<div class="case"><div class="cv"><div class="ctag ct2">NEXT BEST ACTION</div><svg width="230" height="170" viewBox="0 0 230 170"><rect x="25" y="15" width="180" height="36" rx="5" fill="none" stroke="#3b82f6" stroke-width="0.4" opacity="0.25"/><text x="115" y="30" font-size="7" fill="#3b82f6" text-anchor="middle" font-family="monospace" opacity="0.7">14 behavioral signals analyzed</text><text x="115" y="44" font-size="7" fill="#6a6c82" text-anchor="middle" font-family="monospace">2.8M records nightly</text><line x1="115" y1="56" x2="115" y2="70" stroke="#6a6c82" stroke-width="0.5"/><rect x="20" y="76" width="58" height="30" rx="4" fill="#14b8a6" opacity="0.05" stroke="#14b8a6" stroke-width="0.4"/><text x="49" y="95" font-size="7" fill="#14b8a6" text-anchor="middle" font-family="monospace" opacity="0.7">call</text><rect x="86" y="76" width="58" height="30" rx="4" fill="#3b82f6" opacity="0.05" stroke="#3b82f6" stroke-width="0.4"/><text x="115" y="95" font-size="7" fill="#3b82f6" text-anchor="middle" font-family="monospace" opacity="0.7">email</text><rect x="152" y="76" width="58" height="30" rx="4" fill="#f59e0b" opacity="0.05" stroke="#f59e0b" stroke-width="0.4"/><text x="181" y="95" font-size="7" fill="#f59e0b" text-anchor="middle" font-family="monospace" opacity="0.7">escalate</text><text x="115" y="130" font-size="9" fill="#14b8a6" text-anchor="middle" font-family="monospace" opacity="0.6">38% better outcomes with AI</text><text x="115" y="150" font-size="8" fill="#6a6c82" text-anchor="middle" font-family="monospace">200+ frontline users · daily action cards</text></svg></div><div class="cb"><h3>AI 'next best action' engine for frontline operations</h3><p>Built an AI-powered recommendation engine analyzing 14 behavioral signals to predict the highest-impact intervention (call, email, escalation) for each at-risk case. Processed 2.8M records nightly and delivered personalized action cards to 200+ frontline users every morning. Teams following AI achieved 38% better outcomes.</p><div class="mts"><div class="mt m2"><strong>38%</strong><span>Better outcomes</span></div><div class="mt m1"><strong>2.8M</strong><span>Records/night</span></div><div class="mt m4"><strong>200+</strong><span>Daily users</span></div></div></div></div>
+
+<div class="case"><div class="cv"><div class="ctag ct3">FRONTLINE ADOPTION</div><svg width="230" height="170" viewBox="0 0 230 170"><rect x="20" y="15" width="190" height="38" rx="5" fill="none" stroke="#cc0000" stroke-width="0.4" opacity="0.2"/><text x="115" y="30" font-size="8" fill="#cc0000" text-anchor="middle" font-family="monospace" opacity="0.7">traditional training: mandatory, 2hr</text><text x="115" y="44" font-size="7" fill="#cc0000" text-anchor="middle" font-family="monospace" opacity="0.5">result: 34% adoption</text><line x1="115" y1="58" x2="115" y2="72" stroke="#6a6c82" stroke-width="0.5"/><text x="115" y="68" font-size="10" fill="#14b8a6" text-anchor="middle">↓</text><rect x="20" y="78" width="190" height="46" rx="5" fill="#14b8a6" opacity="0.04" stroke="#14b8a6" stroke-width="0.5"/><text x="115" y="94" font-size="7" fill="#14b8a6" text-anchor="middle" font-family="monospace" opacity="0.7">5-min embedded training · role-specific dashboards</text><text x="115" y="108" font-size="7" fill="#14b8a6" text-anchor="middle" font-family="monospace" opacity="0.7">product champions · no separate login</text><text x="115" y="116" font-size="7" fill="#14b8a6" text-anchor="middle" font-family="monospace" opacity="0.7">result: 78% adoption in 8 weeks</text><text x="115" y="148" font-size="9" fill="#14b8a6" text-anchor="middle" font-family="monospace" opacity="0.6">34% → 78% without mandatory training</text></svg></div><div class="cb"><h3>Frontline adoption: 34% → 78% without mandatory training</h3><p>Designed adoption strategies for non-technical, time-constrained frontline operations teams. Built 5-minute embedded training (no separate login). Created role-specific dashboards showing only the 3-4 metrics each team needed. Assigned product champions for peer support. Zero mandatory training required.</p><div class="mts"><div class="mt m1"><strong>34→78%</strong><span>Frontline adoption</span></div><div class="mt m3"><strong>8 weeks</strong><span>Time to impact</span></div><div class="mt m4"><strong>0</strong><span>Mandatory training</span></div></div></div></div>
+
+<div class="case"><div class="cv"><div class="ctag ct4">HYPOTHESIS</div><svg width="230" height="170" viewBox="0 0 230 170"><circle cx="55" cy="45" r="22" fill="none" stroke="#f59e0b" stroke-width="0.4" opacity="0.2"/><text x="55" y="42" font-size="7" fill="#f59e0b" text-anchor="middle" font-family="monospace" opacity="0.7">user</text><text x="55" y="52" font-size="7" fill="#f59e0b" text-anchor="middle" font-family="monospace" opacity="0.7">research</text><text x="90" y="45" font-size="10" fill="#6a6c82">→</text><circle cx="120" cy="45" r="22" fill="none" stroke="#8b5cf6" stroke-width="0.4" opacity="0.2"/><text x="120" y="42" font-size="7" fill="#8b5cf6" text-anchor="middle" font-family="monospace" opacity="0.7">form</text><text x="120" y="52" font-size="7" fill="#8b5cf6" text-anchor="middle" font-family="monospace" opacity="0.7">hypothesis</text><text x="155" y="45" font-size="10" fill="#6a6c82">→</text><circle cx="185" cy="45" r="22" fill="none" stroke="#14b8a6" stroke-width="0.4" opacity="0.2"/><text x="185" y="42" font-size="7" fill="#14b8a6" text-anchor="middle" font-family="monospace" opacity="0.7">test &</text><text x="185" y="52" font-size="7" fill="#14b8a6" text-anchor="middle" font-family="monospace" opacity="0.7">validate</text><rect x="35" y="85" width="160" height="30" rx="5" fill="#14b8a6" opacity="0.03" stroke="#14b8a6" stroke-width="0.4"/><text x="115" y="104" font-size="8" fill="#14b8a6" text-anchor="middle" font-family="monospace" opacity="0.6">8 validated → shipped to production</text><text x="115" y="135" font-size="8" fill="#6a6c82" text-anchor="middle" font-family="monospace">90+ SME sessions · 50+ user interviews</text><text x="115" y="155" font-size="8" fill="#6a6c82" text-anchor="middle" font-family="monospace">4 killed on data · 8 winners shipped</text></svg></div><div class="cb"><h3>Hypothesis-driven methodology: research → test → ship</h3><p>Applied hypothesis-driven approaches to transform data into actionable insights. Conducted 90+ SME sessions and 50+ user interviews. Formulated 12 testable hypotheses, designed experiments, validated 8, killed 4. Shipped validated hypotheses to production with measurable impact. Methodology adopted by 3 teams organization-wide.</p><div class="mts"><div class="mt m4"><strong>90+</strong><span>SME sessions</span></div><div class="mt m3"><strong>8/12</strong><span>Shipped to prod</span></div><div class="mt m1"><strong>3 teams</strong><span>Methodology adopted</span></div></div></div></div>
+
+</div></section>
+
+<!-- DETAILED METRICS -->
+<section id="metrics">
+<div class="chip">Impact metrics</div>
+<h2 class="stitle">Numbers that <span class="tl">moved the business</span>.</h2>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px">
+<div style="background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;text-align:center"><div style="font-family:var(--mono);font-size:36px;font-weight:700;color:var(--teal)">93%</div><div style="font-size:11px;color:var(--text-muted);margin-top:4px">ML prediction accuracy for at-risk population identification</div></div>
+<div style="background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;text-align:center"><div style="font-family:var(--mono);font-size:36px;font-weight:700;color:var(--blue)">38%</div><div style="font-size:11px;color:var(--text-muted);margin-top:4px">Better outcomes when frontline followed AI recommendations</div></div>
+<div style="background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;text-align:center"><div style="font-family:var(--mono);font-size:36px;font-weight:700;color:var(--violet)">34→78%</div><div style="font-size:11px;color:var(--text-muted);margin-top:4px">Frontline adoption without mandatory training in 8 weeks</div></div>
+<div style="background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;text-align:center"><div style="font-family:var(--mono);font-size:36px;font-weight:700;color:var(--amber)">3.2w→4d</div><div style="font-size:11px;color:var(--text-muted);margin-top:4px">Manual workflow reduced through AI-powered automation</div></div>
+<div style="background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;text-align:center"><div style="font-family:var(--mono);font-size:36px;font-weight:700;color:var(--teal)">+22→+51</div><div style="font-size:11px;color:var(--text-muted);margin-top:4px">NPS improvement through decision support and explainability</div></div>
+<div style="background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;text-align:center"><div style="font-family:var(--mono);font-size:36px;font-weight:700;color:var(--blue)">45→8 min</div><div style="font-size:11px;color:var(--text-muted);margin-top:4px">User story writing time with GPT-powered auto-generation</div></div>
+</div></section>
+
+<!-- EXPERIENCE -->
+<div class="exp-bg" id="experience"><div>
+<div class="chip">Experience</div>
+<h2 class="stitle">Where I shipped <span class="tl">AI analytics products</span>.</h2>
+<div class="tl">
+<div class="tli on"><div class="tlh"><div><span class="tlt">Product Manager – AI & Advanced Analytics Products</span> <span class="tlc">@ FINRA</span></div><span class="tld">May 2025 – Dec 2025</span></div><ul class="tlu">
+<li>AI decision support analogous to clinical decision support — at-risk populations, interventions, 93% accuracy</li>
+<li>User research, usability testing, SME interviews → UX flows, wireframes, user stories, acceptance criteria</li>
+<li>Hypothesis-driven: 12 formulated, 8 validated, shipped to production; 3.2wk→4d workflow reduction</li>
+<li>Agile ceremonies, backlog, prioritization; change management across 3 teams; adoption 62%→89%</li>
+</ul></div>
+<div class="tli on"><div class="tlh"><div><span class="tlt">Senior PM – AI/ML Analytics Platform & Enterprise Products</span> <span class="tlc">@ Cognizant</span></div><span class="tld">Jul 2021 – Aug 2024</span></div><ul class="tlu">
+<li>AI/ML platform for 12 F500 clients — risk stratification, 100M+ record scale; adoption 51%→86%; $7.8M</li>
+<li>50+ SME sessions; hypothesis-driven; 4 AI products shipped concept→launch; UX flows, wireframes</li>
+<li>Next best action engine: 14 signals, 2.8M records nightly, 38% better outcomes, 200+ daily users</li>
+<li>Frontline adoption: 5-min embedded training, role-specific dashboards, champions; 34%→78% in 8 weeks</li>
+<li>Agile across 6 squads; design thinking + change management; NPS +22→+51; 12 QBRs; mentored 3 PMs</li>
+</ul></div>
+<div class="tli"><div class="tlh"><div><span class="tlt">Associate PM – Analytics & Decision Support Products</span> <span class="tlc">@ Cognizant</span></div><span class="tld">Jun 2020 – Jul 2021</span></div><ul class="tlu">
+<li>SQL + Tableau dashboards; SME interviews; 61% ticket reduction; onboarding 54%→78%</li>
+<li>Built GPT-powered user story auto-generator — 45min→8min per story; adopted by 4 PMs; 12hr/wk saved</li>
+</ul></div>
+</div></div></div>
+
+<!-- APPROACH -->
+<section id="approach">
+<div class="chip">How I work</div>
+<h2 class="stitle">Three rules for <span class="tl">AI analytics products</span>.</h2>
+<div class="ag">
+<div class="ac" data-n="01"><h3>Hypothesis first, feature second</h3><p>I don't build AI features because AI is trendy. I formulate testable hypotheses from user research and data, design experiments to validate them, and only ship what evidence supports. 8 of 12 hypotheses made it to production. The 4 that didn't? Killed early. That discipline saved months of engineering time.</p></div>
+<div class="ac" data-n="02"><h3>Adoption is the product</h3><p>A 93% accurate ML model means nothing if frontline teams don't use it. I design adoption into the product: embedded training, role-specific views, product champions. Traditional mandatory training got 34% adoption. My approach got 78% in 8 weeks — without a single mandatory session.</p></div>
+<div class="ac" data-n="03"><h3>Actionable beats accurate</h3><p>Frontline teams don't need a dashboard with 50 metrics. They need 3-4 numbers and a clear next action. My 'next best action' engine doesn't just predict risk — it tells you what to do about it. Teams following the AI recommendation achieved 38% better outcomes than those choosing manually.</p></div>
+</div></section>
+
+<!-- TECH -->
+<section id="stack">
+<div class="chip">Skills & expertise</div>
+<h2 class="stitle">The <span class="tl">full stack</span> I bring.</h2>
+<div class="tg">
+<div class="tp"><div class="tn">AI/ML Products</div><div class="tc">core</div></div>
+<div class="tp"><div class="tn">Decision Support</div><div class="tc">core</div></div>
+<div class="tp"><div class="tn">Risk Stratification</div><div class="tc">analytics</div></div>
+<div class="tp"><div class="tn">Next Best Action</div><div class="tc">analytics</div></div>
+<div class="tp"><div class="tn">Hypothesis-Driven</div><div class="tc">methodology</div></div>
+<div class="tp"><div class="tn">Design Thinking</div><div class="tc">methodology</div></div>
+<div class="tp"><div class="tn">Change Mgmt</div><div class="tc">adoption</div></div>
+<div class="tp"><div class="tn">Frontline Adoption</div><div class="tc">adoption</div></div>
+<div class="tp"><div class="tn">User Research</div><div class="tc">discovery</div></div>
+<div class="tp"><div class="tn">SME Interviews</div><div class="tc">discovery</div></div>
+<div class="tp"><div class="tn">UX / Wireframes</div><div class="tc">design</div></div>
+<div class="tp"><div class="tn">User Stories</div><div class="tc">specs</div></div>
+<div class="tp"><div class="tn">SQL</div><div class="tc">analytics</div></div>
+<div class="tp"><div class="tn">Tableau</div><div class="tc">analytics</div></div>
+<div class="tp"><div class="tn">Agile / JIRA</div><div class="tc">execution</div></div>
+<div class="tp"><div class="tn">Stakeholders</div><div class="tc">leadership</div></div>
+</div></section>
+
+<!-- EDUCATION -->
+<section id="education">
+<div class="chip">Education & certifications</div>
+<h2 class="stitle">The <span class="tl">foundation</span>.</h2>
+<div class="eg">
+<div class="ec"><div class="es">University of Denver</div><div class="ed">M.S. Information Technology</div><div class="em"><span class="gp">3.97 / 4.0</span><span class="dt">2024 – 2026</span></div></div>
+<div class="ec"><div class="es">Anna University</div><div class="ed">B.E. Computer Science</div><div class="em"><span class="gp">3.8 / 4.0</span><span class="dt">2017 – 2021</span></div></div>
+</div>
+<div class="certs">
+<span class="cert primary">Salesforce AI Associate</span>
+<span class="cert">AWS Cloud Practitioner</span>
+<span class="cert">Salesforce Admin (ADM 201)</span>
+<span class="cert">Salesforce App Builder</span>
+<span class="cert">GitLab CI/CD</span>
+</div></section>
+
+<!-- CONTACT -->
+<div class="contact" id="contact">
+<h2>Let's build <span class="tl">AI products</span><br>that frontline teams actually use.</h2>
+<p style="color:var(--text-muted);margin-top:8px;position:relative;font-size:14px">Hybrid-ready in NYC. Passionate about making operations more efficient.</p>
+<div class="cls">
+<a href="mailto:kiruthikavenkat2704@gmail.com">kiruthikavenkat2704@gmail.com</a>
+<a href="tel:+17208135590">(720) 813-5590</a>
+</div></div>
+
+<footer>&copy; 2026 Kiruthika Venkatesan</footer>
+</body></html>
